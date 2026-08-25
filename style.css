@@ -1,0 +1,428 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+body {
+  font-family: 'Midstar', Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+/* Barra de navegación fija */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.40);
+  z-index: 1000;
+  transition: top 0.4s ease;
+}
+
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 10px;
+}
+
+
+.navbar li {
+  margin: 0 08px;
+}
+
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+
+.navbar a:hover {
+  color: #2784F5;
+}
+
+
+/* Hero con fondo galaxia */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+
+.hero-logo {
+  width: 900px;   /* ajusta según el tamaño que quieras */
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 50px rgb(32, 32, 32));
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+    background: url('./assets/galaxy-hd.jpg') no-repeat center center/cover;
+  animation: overlayMove 12s ease-in-out infinite alternate;
+}
+
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #eee;
+  text-align: center;
+}
+
+
+/* Sección presentación personalizada */
+.proposito {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+
+.proposito-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('./assets/fondo-proposito.jpg') no-repeat center center/cover;
+  filter: brightness(0.6); /* oscurece un poco para resaltar texto */
+}
+
+
+.proposito-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 1200px;
+}
+
+
+.proposito-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.proposito-logo {
+  width: 600px;
+  height: auto;
+  border: 7px solid #2784F5;
+  border-radius: 20px;
+}
+
+
+.proposito-right {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+
+.proposito-right h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2784F5;
+}
+
+
+.proposito-right p {
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #eee;
+  text-shadow: 5px 5px 15px black;
+}
+
+
+/* Sección Valores */
+
+
+/* Sección Valores */
+.valores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  color: #fff; /* texto en blanco para contraste */
+}
+
+
+.valores h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6); /* sombra para legibilidad */
+}
+
+
+.valores-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* para que se acomoden en pantallas pequeñas */
+}
+
+
+.valor-card {
+  background: #ffffff9f;
+  border: 5px solid #2784F5;   /* 🔥 aquí va el borde */
+  border-radius: 12px;         /* esquinas redondeadas */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 280px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+
+.valor-card:hover {
+  transform: translateY(-10px);
+  border-color: #2784F5;       /* cambia el color del borde al hacer hover */
+}
+
+
+.valor-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+
+.valor-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #2784F5;
+}
+
+
+.valor-card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Tokens (si no los tienes ya) */
+:root{
+  --spaxe-primary: #fd7600;
+  --spaxe-secondary: #2784F5;
+  --text-on-dark: #ffffff;
+  --muted: #6b7280;
+}
+
+/* Contenedor general */
+.colores {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px;
+  color: #0b0c10;
+}
+
+.colores-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Izquierda: logo */
+.colores-left {
+  flex: 0 0 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.colores-logo {
+  width: 650px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(37,150,190,0.12));
+}
+
+/* Derecha: paletas */
+.colores-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.colores-right h1 {
+  font-size: 2.4rem;
+  margin: 0 0 8px 0;
+}
+
+/* Lista de paletas */
+.paletas {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Cada paleta: círculo + meta */
+.paleta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.678);
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(11,12,16,0.06);
+  box-shadow: 0 6px 18px rgba(3,10,20,0.04);
+  min-width: 260px;
+}
+
+.color-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: inset 0 -6px 18px rgba(0,0,0,0.08);
+  border: 2px solid rgba(255,255,255,0.12);
+}
+
+.color-meta strong { display:block; font-size:1rem; margin-bottom:6px; }
+.color-meta .hex { display:block; font-family: monospace; color:#111; margin-bottom:6px; }
+.color-meta .uso { font-size:0.95rem; color:var(--muted); margin:0; }
+
+/* Muestra combinada de botones/blocks */
+.combinacion {
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+  align-items:center;
+}
+.muestra {
+  padding:12px 18px;
+  border-radius:10px;
+  color:var(--text-on-dark);
+  font-weight:700;
+  box-shadow: 0 8px 24px rgba(3,10,20,0.08);
+}
+
+/* Capa de fondo (colores) */
+.colores-bg {
+  position: absolute;
+  inset: 0;
+  background: url('./assets/fondo-colores.jpg') no-repeat center center/cover; /* <-- ajusta ruta si es necesario */
+  z-index: 0;
+  /* Oscurecer con filter para legibilidad */
+  filter: brightness(0.55);
+}
+
+
+/* Responsive: en pantallas pequeñas, logo arriba y texto abajo */
+@media (max-width: 768px) {
+  .presentacion-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  .presentacion-right {
+    text-align: center;
+  }
+
+
+  .presentacion-logo {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+
+
+@keyframes overlayMove {
+  0% { background-position: left top; }
+  100% { background-position: right bottom; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 25px rgba(102, 252, 241, 0.8);
+}
+
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #eee;
+}
+
+
+/* Cada sección ocupa toda la pantalla */
+.slide {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.slide:nth-child(even) {
+  background: #0b0c10;
+  color: #fff;
+}
+
+
+.slide.valores {
+  background: url('./assets/fondo-planeta.jpg') no-repeat center center/cover;
+}
+
+
+.slide h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+
+.slide p {
+  font-size: 1.2rem;
+  max-width: 800px;
+}
+
+
+.img-example {
+  max-width: 70%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #0b0c10;
+  color: #aaa;
+}
