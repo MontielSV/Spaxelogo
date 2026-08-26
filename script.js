@@ -19,6 +19,20 @@ const navLinks = document.querySelectorAll(".navbar a");
 const sections = document.querySelectorAll("section[id]");
 const pageProgress = document.getElementById("page-progress");
 
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetSection = document.querySelector(link.getAttribute("href"));
+    if (!targetSection) return;
+
+    event.preventDefault();
+    navbar.classList.remove("is-hidden");
+    window.scrollTo({
+      top: targetSection.offsetTop,
+      behavior: "smooth"
+    });
+  });
+});
+
 function updatePageProgress() {
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
   const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;

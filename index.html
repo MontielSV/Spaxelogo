@@ -100,16 +100,17 @@
 
         <!-- Derecha: paleta de colores -->
         <div class="colores-right">
-        <h1>Colores</h1>
+        <h1>Colores de la identidad</h1>
+        <p class="colores-intro">La combinación de naranja y azul comunica energía, innovación y confianza desde el primer contacto con Spaxe.</p>
 
         <div class="paletas">
             <!-- Color 1 -->
             <div class="paleta">
             <div class="color-circle" style="background:var(--spaxe-primary);"></div>
             <div class="color-meta">
-                <strong>Primary</strong>
+                <strong>Naranja principal</strong>
                 <span class="hex">#fd7600</span>
-                <p class="uso">Uso: botones principales, enlaces, acentos.</p>
+                <p class="uso"><strong>Qué transmite:</strong> energía, movimiento y exploración. Ayuda a que las acciones importantes destaquen para el usuario.</p>
             </div>
             </div>
 
@@ -117,17 +118,17 @@
             <div class="paleta">
             <div class="color-circle" style="background:var(--spaxe-secondary);"></div>
             <div class="color-meta">
-                <strong>Secondary</strong>
+                <strong>Azul secundario</strong>
                 <span class="hex">#2784F5</span>
-                <p class="uso">Uso: hover, highlights, iconografía.</p>
+                <p class="uso"><strong>Qué transmite:</strong> confianza, tecnología y seguridad. Refuerza la percepción profesional de la API.</p>
             </div>
             </div>
         </div>
 
         <!-- Muestra combinada -->
         <div class="combinacion">
-            <div class="muestra" style="background:var(--spaxe-primary);">Botón Primary</div>
-            <div class="muestra" style="background:var(--spaxe-secondary);">Botón Secondary</div>
+            <div class="muestra" style="background:var(--spaxe-primary);">Acción principal</div>
+            <div class="muestra" style="background:var(--spaxe-secondary);">Información y confianza</div>
         </div>
 
         </div>
@@ -164,7 +165,10 @@
 
   <div class="download-widget">
     <button class="download-toggle" id="download-toggle" type="button" aria-expanded="false" aria-controls="download-menu">
-      Descargar logo
+      <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14" />
+      </svg>
+      <span>Logo Spaxe</span>
     </button>
     <div class="download-menu" id="download-menu" hidden>
       <p>Logo Spaxe</p>
