@@ -15,9 +15,11 @@ body {
   left: 50%;
   width: min(calc(100% - 32px), 1240px);
   transform: translateX(-50%);
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  padding: 6px;
+  gap: 8px;
+  padding: 6px 12px 10px;
   background: rgba(7, 12, 24, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 14px;
@@ -33,12 +35,11 @@ body {
 
 .navbar-brand {
   display: flex;
-  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   width: 42px;
   height: 42px;
-  margin-right: 10px;
+  margin: 0;
   padding: 0;
   transition: transform 0.25s ease;
 }
@@ -58,10 +59,11 @@ body {
 
 .navbar ul {
   display: flex;
-  flex: 1 1 auto;
-  min-width: 0;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 4px;
+  width: 100%;
+  min-width: 0;
   overflow-x: auto;
   list-style: none;
   padding: 0;
@@ -75,12 +77,12 @@ body {
 .navbar-progress {
   display: block;
   position: absolute;
-  right: 10px;
-  bottom: -4px;
-  left: 10px;
+  left: 14px;
+  right: 14px;
+  bottom: -8px;
   width: auto;
   height: 4px;
-  margin: 5px 4px 1px;
+  margin: 0;
   appearance: none;
   cursor: pointer;
   accent-color: #fd7600;
@@ -160,6 +162,12 @@ body {
   .navbar {
     top: 10px;
     width: calc(100% - 20px);
+    grid-template-columns: auto 1fr;
+    padding: 6px 10px 10px;
+  }
+
+  .navbar ul {
+    justify-content: center;
   }
 
   .navbar ul a {
@@ -170,6 +178,12 @@ body {
   .navbar-brand {
     width: 36px;
     height: 36px;
+  }
+
+  .navbar-progress {
+    left: 10px;
+    right: 10px;
+    bottom: -7px;
   }
 }
 
