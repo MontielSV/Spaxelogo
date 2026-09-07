@@ -1,19 +1,7 @@
 console.log("Presentación con fondo galaxia y navbar dinámica 🚀");
 
 
-let prevScrollPos = window.pageYOffset;
 const navbar = document.getElementById("navbar");
-
-
-window.onscroll = function() {
-  let currentScrollPos = window.pageYOffset;
-  if (prevScrollPos < currentScrollPos) {
-    navbar.classList.add("is-hidden");
-  } else {
-    navbar.classList.remove("is-hidden");
-  }
-  prevScrollPos = currentScrollPos;
-};
 
 const navLinks = document.querySelectorAll(".navbar a");
 const sections = document.querySelectorAll("section[id]");
@@ -25,7 +13,6 @@ navLinks.forEach((link) => {
     if (!targetSection) return;
 
     event.preventDefault();
-    navbar.classList.remove("is-hidden");
     window.scrollTo({
       top: targetSection.offsetTop,
       behavior: "smooth"
@@ -51,7 +38,11 @@ const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       navLinks.forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+        const isActive = link.getAttribute("href") === `#${entry.target.id}`;
+        link.classList.toggle("active", isActive);
+        if (isActive) {
+          navbar.style.setProperty("--navbar-accent", getComputedStyle(link).getPropertyValue("--tab-accent"));
+        }
       });
     }
   });
